@@ -1,4 +1,4 @@
-![GitHub Workflow Status (branch)](https://github.com/Adastr4/profiglass/blob/master/.github/workflows/main.yml/badge.svg)
+![GitHub Workflow Status (branch)](https://github.com/Adastr4/profiglass/actions/workflows/main.yml/badge.svg)
 [![codecov](https://codecov.io/gh/Adastr4/profiglass/branch/master/graph/badge.svg?token=1DN5OO835C)](https://codecov.io/gh/Adastr4/profiglass)
 
 
