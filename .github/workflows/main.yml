@@ -14,19 +14,30 @@ jobs:
             NG_CLI_ANALYTICS: false
         steps:
             - uses: actions/checkout@v2
+            
             - uses: actions/setup-node@v1
               with:
                   node-version: 12.18.3
+                  
             - uses: actions/setup-java@v1
               with:
                   java-version: '11.x'
+                  
             - name: Install node.js packages
               run: npm install
+              
             - name: Run backend test
               run: |
                   chmod +x mvnw
                   ./mvnw -ntp clean verify -P-webpack
+                  
             - name: Run frontend test
               run: npm run test
+
+            - uses: codecov/codecov-action@v1
+              with:
+                token: 62cfa06e-7f55-4c35-a98f-12f5a95f162d
+                fail_ci_if_error: true
+                
             - name: Package application
-              run: ./mvnw -ntp package -Pprod -DskipTests
+              run: ./mvnw -ntp package -Pprod -DskipTests  
