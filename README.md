@@ -1,3 +1,7 @@
+![GitHub Workflow Status (branch)](https://github.com/Adastr4/profiglass/blob/master/.github/workflows/main.yml/badge.svg)
+[![codecov](https://codecov.io/gh/Adastr4/profiglass/branch/master/graph/badge.svg?token=1DN5OO835C)](https://codecov.io/gh/Adastr4/profiglass)
+
+
 # profiglass
 
 This application was generated using JHipster 7.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.1.0](https://www.jhipster.tech/documentation-archive/v7.1.0).
