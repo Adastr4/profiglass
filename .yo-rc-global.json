@@ -1,0 +1,8 @@
+{
+  "generator-jhipster:7.1.0": {
+    "promptValues": {
+      "packageName": "it.adastra.profiglass.configuratore",
+      "nativeLanguage": "it"
+    }
+  }
+}
