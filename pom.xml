@@ -287,6 +287,10 @@
             <artifactId>metrics-core</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+        	<groupId>cart.test</groupId>
+        	<artifactId>cart.test</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
