@@ -1,7 +1,3 @@
-![GitHub Workflow Status (branch)](https://github.com/Adastr4/profiglass/actions/workflows/main.yml/badge.svg)
-[![codecov](https://codecov.io/gh/Adastr4/profiglass/branch/master/graph/badge.svg?token=1DN5OO835C)](https://codecov.io/gh/Adastr4/profiglass)
-
-
 # profiglass
 
 This application was generated using JHipster 7.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.1.0](https://www.jhipster.tech/documentation-archive/v7.1.0).
@@ -112,7 +108,7 @@ To ensure everything worked, run:
 java -jar target/*.jar
 ```
 
-Then navigate to [http://localhost:8081](http://localhost:8081) in your browser.
+Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
 Refer to [Using JHipster in production][] for more details.
 

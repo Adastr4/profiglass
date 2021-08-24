@@ -19,7 +19,7 @@
     "reactive": false,
     "authenticationType": "jwt",
     "packageName": "it.adastra.profiglass.configuratore",
-    "serverPort": "8081",
+    "serverPort": "8080",
     "cacheProvider": "caffeine",
     "enableHibernateCache": false,
     "databaseType": "mongodb",
