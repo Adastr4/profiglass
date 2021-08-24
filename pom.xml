@@ -290,6 +290,7 @@
         <dependency>
         	<groupId>cart.test</groupId>
         	<artifactId>cart.test</artifactId>
+        	<version>0.0.1</version>
         </dependency>
     </dependencies>
 
