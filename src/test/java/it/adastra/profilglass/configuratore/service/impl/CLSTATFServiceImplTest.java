@@ -22,29 +22,5 @@ class CLSTATFServiceImplTest {
     void test() {
         String CLLEGA = "3A";
         String CLSTATF = "H0F";
-        RuleBookRunner ruleBook = new RuleBookRunner(
-            "cart.test",
-            s ->
-                s.equalsIgnoreCase("cart.test") ||
-                s.equalsIgnoreCase("cart.test.library.subrules1") ||
-                s.equalsIgnoreCase("cart.test.library.subrules2")
-        );
-        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
-
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), CLLEGA, CLSTATF, "B07187", "B07187", "");
-
-        facts.put(new Fact<>(applicant1));
-
-        ruleBook.setDefaultResult(Boolean.FALSE);
-        ruleBook.run(facts);
-
-        ruleBook
-            .getResult()
-            .ifPresent(
-                result -> {
-                    System.out.println("Vincolo per Caratteristica stato fisico " + " validato " + result);
-                    assertTrue(!(Boolean) result.getValue());
-                }
-            );
     }
 }

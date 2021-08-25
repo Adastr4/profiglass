@@ -1,11 +1,17 @@
 package it.adastra.profilglass.configuratore.web.rest;
 
+import cart.test.CaratteristicaBean;
+import com.deliveredtechnologies.rulebook.Fact;
+import com.deliveredtechnologies.rulebook.FactMap;
+import com.deliveredtechnologies.rulebook.NameValueReferableMap;
+import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
 import it.adastra.profilglass.configuratore.repository.CLSTATFRepository;
 import it.adastra.profilglass.configuratore.service.CLSTATFQueryService;
 import it.adastra.profilglass.configuratore.service.CLSTATFService;
 import it.adastra.profilglass.configuratore.service.criteria.CLSTATFCriteria;
 import it.adastra.profilglass.configuratore.service.dto.CLSTATFDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
+import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -208,8 +214,43 @@ public class CLSTATFResource {
     public List<CLSTATFDTO> getAllCLSTATFwLega(@PathVariable String idlega) {
         log.debug("REST request to get getAllCLSTATFwLega by criteria: {}", idlega);
         List<CLSTATFDTO> page = cLSTATFQueryService.findByCriteria(null);
-
+        applyRules(idlega, page);
         return page;
+    }
+
+    private void applyRules(String idlega, List<CLSTATFDTO> page) {
+        for (CLSTATFDTO clstatfdto : page) {
+            applyRulesToLega(idlega, clstatfdto.getOpzione());
+        }
+    }
+
+    private void applyRulesToLega(String lega, String opzione) {
+        return;
+
+        RuleBookRunner ruleBook = new RuleBookRunner(
+            "cart.test",
+            s ->
+                s.equalsIgnoreCase("cart.test") ||
+                s.equalsIgnoreCase("cart.test.library.subrules1") ||
+                s.equalsIgnoreCase("cart.test.library.subrules2")
+        );
+        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
+
+        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, opzione, "B07187", "B07187", "");
+
+        facts.put(new Fact<>(applicant1));
+
+        ruleBook.setDefaultResult(Boolean.FALSE);
+        ruleBook.run(facts);
+
+        ruleBook
+            .getResult()
+            .ifPresent(
+                result -> {
+                    System.out.println("Vincolo per Caratteristica stato fisico " + " validato " + result);
+                    result.getValue();
+                }
+            );
     }
 
     /**
