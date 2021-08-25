@@ -1,0 +1,25 @@
+{
+  "profilglassApp": {
+    "cLLEGA": {
+      "home": {
+        "title": "CLLEGAS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new CLLEGA",
+        "createOrEditLabel": "Create or edit a CLLEGA",
+        "notFound": "No CLLEGAS found"
+      },
+      "created": "A new CLLEGA is created with identifier {{ param }}",
+      "updated": "A CLLEGA is updated with identifier {{ param }}",
+      "deleted": "A CLLEGA is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete CLLEGA {{ id }}?"
+      },
+      "detail": {
+        "title": "CLLEGA"
+      },
+      "id": "ID",
+      "opzione": "Opzione",
+      "descrizione": "Descrizione"
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "profiglass": {
+    "profilglass": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -84,16 +84,16 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "profiglass:build:development",
+            "browserTarget": "profilglass:build:development",
             "proxyConfig": "./webpack/proxy.conf.js",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "profiglass:build:production"
+              "browserTarget": "profilglass:build:production"
             },
             "development": {
-              "browserTarget": "profiglass:build:development"
+              "browserTarget": "profilglass:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,7 +107,7 @@
       }
     }
   },
-  "defaultProject": "profiglass",
+  "defaultProject": "profilglass",
   "cli": {
     "packageManager": "npm"
   }

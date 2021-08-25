@@ -1,0 +1,21 @@
+{
+  "fields": [
+    {
+      "fieldName": "opzione",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descrizione",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": true,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "CLLEGA",
+  "changelogDate": "20210825064429"
+}

@@ -1,0 +1,25 @@
+{
+  "profilglassApp": {
+    "cLSTATF": {
+      "home": {
+        "title": "CLSTATFS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new CLSTATF",
+        "createOrEditLabel": "Create or edit a CLSTATF",
+        "notFound": "No CLSTATFS found"
+      },
+      "created": "A new CLSTATF is created with identifier {{ param }}",
+      "updated": "A CLSTATF is updated with identifier {{ param }}",
+      "deleted": "A CLSTATF is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete CLSTATF {{ id }}?"
+      },
+      "detail": {
+        "title": "CLSTATF"
+      },
+      "id": "ID",
+      "opzione": "Opzione",
+      "descrizione": "Descrizione"
+    }
+  }
+}

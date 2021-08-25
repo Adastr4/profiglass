@@ -1,0 +1,26 @@
+{
+  "profilglassApp": {
+    "parameters": {
+      "home": {
+        "title": "Parameters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Parameters",
+        "createOrEditLabel": "Genera o modifica un Parameters",
+        "notFound": "No Parameters found"
+      },
+      "created": "&Egrave; stato generato un nuovo Parameters con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Parameters identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Parameters con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Parameters {{ id }}?"
+      },
+      "detail": {
+        "title": "Parameters"
+      },
+      "id": "ID",
+      "key": "Key",
+      "value": "Value",
+      "description": "Description"
+    }
+  }
+}

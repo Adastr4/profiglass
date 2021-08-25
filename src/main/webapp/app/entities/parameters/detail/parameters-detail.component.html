@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="parameters">
+      <h2 data-cy="parametersDetailsHeading"><span jhiTranslate="profilglassApp.parameters.detail.title">Parameters</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ parameters.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="profilglassApp.parameters.key">Key</span></dt>
+        <dd>
+          <span>{{ parameters.key }}</span>
+        </dd>
+        <dt><span jhiTranslate="profilglassApp.parameters.value">Value</span></dt>
+        <dd>
+          <span>{{ parameters.value }}</span>
+        </dd>
+        <dt><span jhiTranslate="profilglassApp.parameters.description">Description</span></dt>
+        <dd>
+          <span>{{ parameters.description }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/parameters', parameters.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
