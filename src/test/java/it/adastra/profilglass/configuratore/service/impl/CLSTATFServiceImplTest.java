@@ -1,13 +1,5 @@
 package it.adastra.profilglass.configuratore.service.impl;
 
-import static org.junit.Assert.assertTrue;
-
-import cart.test.CaratteristicaBean;
-import com.deliveredtechnologies.rulebook.Fact;
-import com.deliveredtechnologies.rulebook.FactMap;
-import com.deliveredtechnologies.rulebook.NameValueReferableMap;
-import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
-import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 
 /**

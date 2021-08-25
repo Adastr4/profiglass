@@ -2,7 +2,8 @@ package it.adastra.profilglass.configuratore.security;
 
 import it.adastra.profilglass.configuratore.domain.User;
 import it.adastra.profilglass.configuratore.repository.UserRepository;
-import java.util.*;
+import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
 import org.slf4j.Logger;

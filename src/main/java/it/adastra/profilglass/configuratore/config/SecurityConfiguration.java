@@ -1,7 +1,8 @@
 package it.adastra.profilglass.configuratore.config;
 
-import it.adastra.profilglass.configuratore.security.*;
-import it.adastra.profilglass.configuratore.security.jwt.*;
+import it.adastra.profilglass.configuratore.security.AuthoritiesConstants;
+import it.adastra.profilglass.configuratore.security.jwt.JWTConfigurer;
+import it.adastra.profilglass.configuratore.security.jwt.TokenProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;

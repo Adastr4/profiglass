@@ -1,8 +1,8 @@
 package it.adastra.profilglass.configuratore.service.mapper;
 
-import it.adastra.profilglass.configuratore.domain.*;
+import it.adastra.profilglass.configuratore.domain.Parameters;
 import it.adastra.profilglass.configuratore.service.dto.ParametersDTO;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
 
 /**
  * Mapper for the entity {@link Parameters} and its DTO {@link ParametersDTO}.

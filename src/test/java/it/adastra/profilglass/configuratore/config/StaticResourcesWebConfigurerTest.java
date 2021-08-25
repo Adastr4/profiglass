@@ -1,8 +1,14 @@
 package it.adastra.profilglass.configuratore.config;
 
-import static it.adastra.profilglass.configuratore.config.StaticResourcesWebConfiguration.*;
+import static it.adastra.profilglass.configuratore.config.StaticResourcesWebConfiguration.RESOURCE_LOCATIONS;
+import static it.adastra.profilglass.configuratore.config.StaticResourcesWebConfiguration.RESOURCE_PATHS;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
