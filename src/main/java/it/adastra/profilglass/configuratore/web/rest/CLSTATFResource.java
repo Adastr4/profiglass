@@ -28,7 +28,8 @@ import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
 
 /**
- * REST controller for managing {@link it.adastra.profilglass.configuratore.domain.CLSTATF}.
+ * REST controller for managing
+ * {@link it.adastra.profilglass.configuratore.domain.CLSTATF}.
  */
 @RestController
 @RequestMapping("/api")
@@ -57,7 +58,9 @@ public class CLSTATFResource {
      * {@code POST  /clstatfs} : Create a new cLSTATF.
      *
      * @param cLSTATFDTO the cLSTATFDTO to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new cLSTATFDTO, or with status {@code 400 (Bad Request)} if the cLSTATF has already an ID.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with
+     *         body the new cLSTATFDTO, or with status {@code 400 (Bad Request)} if
+     *         the cLSTATF has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/clstatfs")
@@ -76,11 +79,13 @@ public class CLSTATFResource {
     /**
      * {@code PUT  /clstatfs/:id} : Updates an existing cLSTATF.
      *
-     * @param id the id of the cLSTATFDTO to save.
+     * @param id         the id of the cLSTATFDTO to save.
      * @param cLSTATFDTO the cLSTATFDTO to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated cLSTATFDTO,
-     * or with status {@code 400 (Bad Request)} if the cLSTATFDTO is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the cLSTATFDTO couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated cLSTATFDTO, or with status {@code 400 (Bad Request)} if
+     *         the cLSTATFDTO is not valid, or with status
+     *         {@code 500 (Internal Server Error)} if the cLSTATFDTO couldn't be
+     *         updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/clstatfs/{id}")
@@ -108,14 +113,17 @@ public class CLSTATFResource {
     }
 
     /**
-     * {@code PATCH  /clstatfs/:id} : Partial updates given fields of an existing cLSTATF, field will ignore if it is null
+     * {@code PATCH  /clstatfs/:id} : Partial updates given fields of an existing
+     * cLSTATF, field will ignore if it is null
      *
-     * @param id the id of the cLSTATFDTO to save.
+     * @param id         the id of the cLSTATFDTO to save.
      * @param cLSTATFDTO the cLSTATFDTO to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated cLSTATFDTO,
-     * or with status {@code 400 (Bad Request)} if the cLSTATFDTO is not valid,
-     * or with status {@code 404 (Not Found)} if the cLSTATFDTO is not found,
-     * or with status {@code 500 (Internal Server Error)} if the cLSTATFDTO couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated cLSTATFDTO, or with status {@code 400 (Bad Request)} if
+     *         the cLSTATFDTO is not valid, or with status {@code 404 (Not Found)}
+     *         if the cLSTATFDTO is not found, or with status
+     *         {@code 500 (Internal Server Error)} if the cLSTATFDTO couldn't be
+     *         updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/clstatfs/{id}", consumes = "application/merge-patch+json")
@@ -148,7 +156,8 @@ public class CLSTATFResource {
      *
      * @param pageable the pagination information.
      * @param criteria the criteria which the requested entities should match.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of cLSTATFS in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list
+     *         of cLSTATFS in body.
      */
     @GetMapping("/clstatfs")
     public ResponseEntity<List<CLSTATFDTO>> getAllCLSTATFS(CLSTATFCriteria criteria, Pageable pageable) {
@@ -162,7 +171,8 @@ public class CLSTATFResource {
      * {@code GET  /clstatfs/count} : count all the cLSTATFS.
      *
      * @param criteria the criteria which the requested entities should match.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count
+     *         in body.
      */
     @GetMapping("/clstatfs/count")
     public ResponseEntity<Long> countCLSTATFS(CLSTATFCriteria criteria) {
@@ -174,7 +184,8 @@ public class CLSTATFResource {
      * {@code GET  /clstatfs/:id} : get the "id" cLSTATF.
      *
      * @param id the id of the cLSTATFDTO to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the cLSTATFDTO, or with status {@code 404 (Not Found)}.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the cLSTATFDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/clstatfs/{id}")
     public ResponseEntity<CLSTATFDTO> getCLSTATF(@PathVariable Long id) {
@@ -184,17 +195,21 @@ public class CLSTATFResource {
     }
 
     /**
-     * {@code GET  /clstatfs/:idlega} : get the "id" cLSTATF.
+     * {@code GET  /clstatfs/:idlega} : get the "id" che sono compatibili con la
+     * lega selezionata.
      *
-     * @param id the id of the cLSTATFDTO to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the cLSTATFDTO, or with status {@code 404 (Not Found)}.
+     * prendere tutti i
+     *
+     * @param id the idlega of the lega scelta to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the cLSTATFDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/clstatfslega/{idlega}")
-    public ResponseEntity<CLSTATFDTO> getAllCLSTATFwLega(@PathVariable Long id) {
-        log.debug("REST request to get getAllCLSTATFwLega : {}", id);
-        Optional<CLSTATFDTO> cLSTATFDTO = cLSTATFService.findOne(id);
+    public List<CLSTATFDTO> getAllCLSTATFwLega(@PathVariable String idlega) {
+        log.debug("REST request to get getAllCLSTATFwLega by criteria: {}", idlega);
+        List<CLSTATFDTO> page = cLSTATFQueryService.findByCriteria(null);
 
-        return ResponseUtil.wrapOrNotFound(cLSTATFDTO);
+        return page;
     }
 
     /**
