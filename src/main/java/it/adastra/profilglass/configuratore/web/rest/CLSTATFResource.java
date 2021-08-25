@@ -4,6 +4,7 @@ import cart.test.CaratteristicaBean;
 import com.deliveredtechnologies.rulebook.Fact;
 import com.deliveredtechnologies.rulebook.FactMap;
 import com.deliveredtechnologies.rulebook.NameValueReferableMap;
+import com.deliveredtechnologies.rulebook.Result;
 import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
 import it.adastra.profilglass.configuratore.repository.CLSTATFRepository;
 import it.adastra.profilglass.configuratore.service.CLSTATFQueryService;
@@ -14,6 +15,7 @@ import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertExcep
 import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -225,9 +227,12 @@ public class CLSTATFResource {
         return page;
     }
 
-    private void applyRules(String idlega, List<CLSTATFDTO> page) {
-        for (CLSTATFDTO clstatfdto : page) {
-            if (applyRulesToLega(idlega, clstatfdto.getOpzione())) {}
+    void applyRules(String idlega, List<CLSTATFDTO> page) {
+        for (Iterator iterator = page.iterator(); iterator.hasNext();) {
+            CLSTATFDTO clstatfdto = (CLSTATFDTO) iterator.next();
+            if (applyRulesToLega(idlega, clstatfdto.getOpzione())) {
+                iterator.remove();
+            }
         }
     }
 
@@ -247,16 +252,16 @@ public class CLSTATFResource {
 
         ruleBook.setDefaultResult(Boolean.FALSE);
         ruleBook.run(facts);
+        boolean ret = false;
+        Optional<Result> result = ruleBook.getResult();
 
-        ruleBook
-            .getResult()
-            .ifPresent(
-                result -> {
-                    System.out.println("Vincolo per Caratteristica stato fisico " + " validato " + result);
-                    result.getValue();
-                }
-            );
-        return true;
+        result.ifPresent(
+            action -> {
+                System.out.println("Vincolo per Caratteristica stato fisico " + " validato " + action);
+            }
+        );
+
+        return (boolean) result.get().getValue();
     }
 
     /**
