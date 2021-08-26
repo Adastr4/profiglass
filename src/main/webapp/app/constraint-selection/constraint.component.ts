@@ -9,34 +9,30 @@ import { ConstraintService } from 'app/constraint-selection/constraint.service';
   styleUrls: ['./constraint.component.scss'],
 })
 export class ConstraintComponent implements OnInit {
-  query1: any = {};
-  query2: any = {};
-  selectedDeviceObj = '';
-  selectedDeviceObj2 = '';
+  cllegasData: any = {};
+  clstatfslegaData: any = {};
+  selectedDeviceCllegas = '';
+  selectedDeviceClstatfslega = '';
 
   private readonly destroy$ = new Subject<void>();
 
   constructor(private constraintService: ConstraintService) {}
 
-  onChangeObj(newObj: any): void {
-    this.selectedDeviceObj = newObj;
+  onChangeCllegas(newObj: any): void {
+    this.selectedDeviceCllegas = newObj;
 
-    this.constraintService.getTest2(newObj.opzione).subscribe(response => {
-      this.query2 = response.body;
+    this.constraintService.getClstatfslega(newObj.opzione).subscribe(response => {
+      this.clstatfslegaData = response.body;
     });
   }
 
-  onChangeObj2(newObj: any): void {
-    this.selectedDeviceObj2 = newObj;
-
-    this.constraintService.getTest2(newObj.opzione).subscribe(response => {
-      this.query2 = response.body;
-    });
+  onChangeClstatfslega(newObj: any): void {
+    this.selectedDeviceClstatfslega = newObj;
   }
 
   ngOnInit(): void {
-    this.constraintService.getTest().subscribe(response => {
-      this.query1 = response.body;
+    this.constraintService.getCllegas().subscribe(response => {
+      this.cllegasData = response.body;
     });
   }
 }

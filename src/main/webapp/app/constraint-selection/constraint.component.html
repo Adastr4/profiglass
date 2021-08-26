@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <h4>Seleziona il primo vincolo:</h4>
-  <select class="custom-select" [ngModel]="selectedDeviceObj" (ngModelChange)="onChangeObj($event)" name="sel3">
-    <option [ngValue]="i" *ngFor="let i of query1">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
+  <select class="custom-select" [ngModel]="selectedDeviceCllegas" (ngModelChange)="onChangeCllegas($event)" name="sel3">
+    <option [ngValue]="i" *ngFor="let i of cllegasData">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
   </select>
   <br />
   <br />
   <h4>Seleziona il secondo vincolo:</h4>
-  <select class="custom-select" [ngModel]="selectedDeviceObj2" (ngModelChange)="onChangeObj2($event)" name="sel3">
-    <option [ngValue]="i" *ngFor="let i of query2">{{ i.id }} {{ i.descrizione }} {{ i.opzione }}</option>
+  <select class="custom-select" [ngModel]="selectedDeviceClstatfslega" (ngModelChange)="onChangeClstatfslega($event)" name="sel3">
+    <option [ngValue]="i" *ngFor="let i of clstatfslegaData">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
   </select>
 </div>

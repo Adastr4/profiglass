@@ -12,11 +12,11 @@ export type EntityResponseType = HttpResponse<ICLLEGA>;
 export class ConstraintService {
   constructor(private http: HttpClient, private applicationConfigService: ApplicationConfigService) {}
 
-  getTest(): Observable<EntityResponseType> {
+  getCllegas(): Observable<EntityResponseType> {
     return this.http.get<ICLLEGA>(this.applicationConfigService.getEndpointFor(`api/cllegas`), { observe: 'response' });
   }
 
-  getTest2(id: string): Observable<HttpResponse<ICLSTATF>> {
+  getClstatfslega(id: string): Observable<HttpResponse<ICLSTATF>> {
     return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`/api/clstatfslega/${id}`), { observe: 'response' });
   }
 }
