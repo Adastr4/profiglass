@@ -246,7 +246,7 @@ public class CLSTATFResource {
         );
         NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
 
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, opzione, "B07187", "B07187", "");
+        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, opzione, "B07187", "B07187", "", "");
 
         facts.put(new Fact<>(applicant1));
 
