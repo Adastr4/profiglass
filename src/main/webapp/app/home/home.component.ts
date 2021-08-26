@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   onChangeObj(newObj: any): void {
     this.selectedDeviceObj = newObj;
 
-    this.homeService.getTest2(newObj[0].id).subscribe(response => {
+    this.homeService.getTest2(newObj.opzione).subscribe(response => {
       this.query2 = response.body;
     });
   }
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   onChangeObj2(newObj: any): void {
     this.selectedDeviceObj2 = newObj;
 
-    this.homeService.getTest2(newObj[0].id).subscribe(response => {
+    this.homeService.getTest2(newObj[0].opzione).subscribe(response => {
       this.query2 = response.body;
     });
   }

@@ -16,7 +16,7 @@ export class HomeService {
     return this.http.get<ICLLEGA>(this.applicationConfigService.getEndpointFor(`api/cllegas`), { observe: 'response' });
   }
 
-  getTest2(id: string): Observable<HttpResponse<ICLSTATF>> {
-    return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`/api/clstatfs/${id}`), { observe: 'response' });
+  getTest2(id: string): Observable<HttpResponse<ICLLEGA>> {
+    return this.http.get<ICLLEGA>(this.applicationConfigService.getEndpointFor(`/api/clstatfslega/${id}`), { observe: 'response' });
   }
 }

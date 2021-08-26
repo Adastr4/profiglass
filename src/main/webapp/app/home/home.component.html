@@ -24,7 +24,7 @@
         <br />
         <h4>Seleziona il secondo vincolo:</h4>
         <select class="custom-select" [ngModel]="selectedDeviceObj2" (ngModelChange)="onChangeObj2($event)" name="sel3">
-          <option [ngValue]="i" *ngFor="let i of query2">{{ i.id }} {{ i.descrizione }} {{ i.opzione }}</option>
+          <option [ngValue]="i" *ngFor="let i of query2">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
         </select>
       </div>
 
