@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
+import { HomeService } from 'app/home/home.service';
 
 @Component({
   selector: 'jhi-home',
@@ -14,11 +15,36 @@ import { Account } from 'app/core/auth/account.model';
 export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
 
+  query1: any = {};
+  query2: any = {};
+  selectedDeviceObj = '';
+  selectedDeviceObj2 = '';
+
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(private accountService: AccountService, private router: Router, private homeService: HomeService) {}
+
+  onChangeObj(newObj: any): void {
+    this.selectedDeviceObj = newObj;
+
+    this.homeService.getTest2(newObj[0].id).subscribe(response => {
+      this.query2 = response.body;
+    });
+  }
+
+  onChangeObj2(newObj: any): void {
+    this.selectedDeviceObj2 = newObj;
+
+    this.homeService.getTest2(newObj[0].id).subscribe(response => {
+      this.query2 = response.body;
+    });
+  }
 
   ngOnInit(): void {
+    this.homeService.getTest().subscribe(response => {
+      this.query1 = response.body;
+    });
+
     this.accountService
       .getAuthenticationState()
       .pipe(takeUntil(this.destroy$))
