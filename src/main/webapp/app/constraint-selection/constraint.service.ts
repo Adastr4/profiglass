@@ -9,14 +9,14 @@ import { ICLSTATF } from 'app/entities/clstatf/clstatf.model';
 export type EntityResponseType = HttpResponse<ICLLEGA>;
 
 @Injectable({ providedIn: 'root' })
-export class HomeService {
+export class ConstraintService {
   constructor(private http: HttpClient, private applicationConfigService: ApplicationConfigService) {}
 
   getTest(): Observable<EntityResponseType> {
     return this.http.get<ICLLEGA>(this.applicationConfigService.getEndpointFor(`api/cllegas`), { observe: 'response' });
   }
 
-  getTest2(id: string): Observable<HttpResponse<ICLLEGA>> {
-    return this.http.get<ICLLEGA>(this.applicationConfigService.getEndpointFor(`/api/clstatfslega/${id}`), { observe: 'response' });
+  getTest2(id: string): Observable<HttpResponse<ICLSTATF>> {
+    return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`/api/clstatfslega/${id}`), { observe: 'response' });
   }
 }
