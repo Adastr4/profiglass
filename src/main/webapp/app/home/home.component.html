@@ -15,7 +15,9 @@
         >
       </div>
 
-      <jhi-contraint-selection></jhi-contraint-selection>
+      <div *ngSwitchCase="true">
+        <jhi-contraint-selection></jhi-contraint-selection>
+      </div>
 
       <div class="alert alert-warning" *ngSwitchCase="false">
         <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
