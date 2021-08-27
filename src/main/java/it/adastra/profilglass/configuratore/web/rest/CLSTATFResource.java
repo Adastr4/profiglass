@@ -231,7 +231,7 @@ public class CLSTATFResource {
     void applyRules(String idlega, List<CLSTATFDTO> page) {
         for (Iterator iterator = page.iterator(); iterator.hasNext();) {
             CLSTATFDTO clstatfdto = (CLSTATFDTO) iterator.next();
-            if (applyRulesToLega(idlega, clstatfdto.getOpzione())) {
+            if (!applyRulesToLega(idlega, clstatfdto.getOpzione())) {
                 iterator.remove();
             }
         }

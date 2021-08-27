@@ -28,7 +28,7 @@ class CARCLFINIResourceTest {
         tmp.setClasse("HA1");
         page.add(tmp);
 
-        CLSTATFR.applyRulesFinitura("3A", "H12", page);
+        CLSTATFR.applyRulesFinitura("3D", "H12", page);
         assertTrue(page.size() == 1);
     }
 }

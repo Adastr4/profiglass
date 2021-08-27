@@ -194,7 +194,7 @@ public class CARCLFINIResource {
     void applyRulesFinitura(String idlega, String idfinitura, List<CARCLFINIDTO> page) {
         for (Iterator iterator = page.iterator(); iterator.hasNext();) {
             CARCLFINIDTO clstatfdto = (CARCLFINIDTO) iterator.next();
-            if (applyRulesToFinitura(idlega, idfinitura, clstatfdto.getClasse())) {
+            if (!applyRulesToFinitura(idlega, idfinitura, clstatfdto.getClasse())) {
                 iterator.remove();
             }
         }
