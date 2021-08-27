@@ -2,6 +2,7 @@ package it.adastra.profilglass.configuratore.web.rest;
 
 import static org.junit.Assert.assertTrue;
 
+import it.adastra.profilglass.configuratore.domain.CARCLFINI;
 import it.adastra.profilglass.configuratore.service.dto.CLSTATFDTO;
 import java.util.ArrayList;
 import java.util.List;
