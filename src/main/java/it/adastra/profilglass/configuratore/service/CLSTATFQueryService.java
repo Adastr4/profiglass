@@ -1,13 +1,13 @@
 package it.adastra.profilglass.configuratore.service;
 
-// for static metamodels
+import it.adastra.profilglass.configuratore.domain.*; // for static metamodels
 import it.adastra.profilglass.configuratore.domain.CLSTATF;
-import it.adastra.profilglass.configuratore.domain.CLSTATF_;
 import it.adastra.profilglass.configuratore.repository.CLSTATFRepository;
 import it.adastra.profilglass.configuratore.service.criteria.CLSTATFCriteria;
 import it.adastra.profilglass.configuratore.service.dto.CLSTATFDTO;
 import it.adastra.profilglass.configuratore.service.mapper.CLSTATFMapper;
 import java.util.List;
+import javax.persistence.criteria.JoinType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

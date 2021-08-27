@@ -1,12 +1,16 @@
 <div class="container-fluid">
-  <h4>Seleziona il primo vincolo:</h4>
+  <h4>Seleziona la Lega:</h4>
   <select class="custom-select" [ngModel]="selectedDeviceCllegas" (ngModelChange)="onChangeCllegas($event)" name="sel3">
     <option [ngValue]="i" *ngFor="let i of cllegasData">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
   </select>
   <br />
   <br />
-  <h4>Seleziona il secondo vincolo:</h4>
+  <h4>Seleziona lo stato fisico:</h4>
   <select class="custom-select" [ngModel]="selectedDeviceClstatfslega" (ngModelChange)="onChangeClstatfslega($event)" name="sel3">
     <option [ngValue]="i" *ngFor="let i of clstatfslegaData">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
+  </select>
+  <h4>Seleziona la finitura:</h4>
+  <select class="custom-select">
+    <option></option>
   </select>
 </div>

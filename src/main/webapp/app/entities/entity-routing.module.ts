@@ -19,6 +19,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'profilglassApp.cLSTATF.home.title' },
         loadChildren: () => import('./clstatf/clstatf.module').then(m => m.CLSTATFModule),
       },
+      {
+        path: 'carclfini',
+        data: { pageTitle: 'profilglassApp.cARCLFINI.home.title' },
+        loadChildren: () => import('./carclfini/carclfini.module').then(m => m.CARCLFINIModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

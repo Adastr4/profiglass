@@ -43,7 +43,7 @@
     "devServerPort": 4200,
     "clientPackageManager": "npm",
     "languages": ["it", "en"],
-    "lastLiquibaseTimestamp": 1629879931000,
-    "entities": ["Parameters", "CLLEGA", "CLSTATF"]
+    "lastLiquibaseTimestamp": 1630056626000,
+    "entities": ["Parameters", "CLLEGA", "CLSTATF", "CARCLFINI"]
   }
 }

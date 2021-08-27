@@ -1,0 +1,24 @@
+{
+  "profilglassApp": {
+    "cARCLFINI": {
+      "home": {
+        "title": "CARCLFINIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo CARCLFINI",
+        "createOrEditLabel": "Genera o modifica un CARCLFINI",
+        "notFound": "No CARCLFINIS found"
+      },
+      "created": "&Egrave; stato generato un nuovo CARCLFINI con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato CARCLFINI identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato CARCLFINI con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare CARCLFINI {{ id }}?"
+      },
+      "detail": {
+        "title": "CARCLFINI"
+      },
+      "id": "ID",
+      "classe": "Classe"
+    }
+  }
+}

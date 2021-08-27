@@ -2,18 +2,13 @@ package it.adastra.profilglass.configuratore.web.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import it.adastra.profilglass.configuratore.IntegrationTest;
 import it.adastra.profilglass.configuratore.domain.CLSTATF;
 import it.adastra.profilglass.configuratore.repository.CLSTATFRepository;
+import it.adastra.profilglass.configuratore.service.criteria.CLSTATFCriteria;
 import it.adastra.profilglass.configuratore.service.dto.CLSTATFDTO;
 import it.adastra.profilglass.configuratore.service.mapper.CLSTATFMapper;
 import java.util.List;

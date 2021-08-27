@@ -1,0 +1,11 @@
+package it.adastra.profilglass.configuratore.service.mapper;
+
+import it.adastra.profilglass.configuratore.domain.*;
+import it.adastra.profilglass.configuratore.service.dto.CARCLFINIDTO;
+import org.mapstruct.*;
+
+/**
+ * Mapper for the entity {@link CARCLFINI} and its DTO {@link CARCLFINIDTO}.
+ */
+@Mapper(componentModel = "spring", uses = {})
+public interface CARCLFINIMapper extends EntityMapper<CARCLFINIDTO, CARCLFINI> {}

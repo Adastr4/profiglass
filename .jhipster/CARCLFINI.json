@@ -1,0 +1,17 @@
+{
+  "fields": [
+    {
+      "fieldName": "classe",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": true,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "CARCLFINI",
+  "changelogDate": "20210827093026"
+}

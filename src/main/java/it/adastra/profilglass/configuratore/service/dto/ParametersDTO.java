@@ -2,7 +2,7 @@ package it.adastra.profilglass.configuratore.service.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 /**
  * A DTO for the {@link it.adastra.profilglass.configuratore.domain.Parameters} entity.

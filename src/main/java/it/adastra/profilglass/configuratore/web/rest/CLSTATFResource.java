@@ -236,7 +236,29 @@ public class CLSTATFResource {
         }
     }
 
-    boolean applyRulesToLega(String lega, String opzione) {
+    boolean applyRulesToFinitura(String lega, String statofisico, String finitura) {
+        RuleBookRunner ruleBook = new RuleBookRunner("cart.test.constraints.cs2");
+        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
+
+        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "");
+
+        facts.put(new Fact<>(applicant1));
+
+        ruleBook.setDefaultResult(Boolean.FALSE);
+        ruleBook.run(facts);
+        boolean ret = false;
+        Optional<Result> result = ruleBook.getResult();
+
+        result.ifPresent(
+            action -> {
+                System.out.println("Vincolo per Caratteristica stato fisico " + " validato " + action);
+            }
+        );
+
+        return (boolean) result.get().getValue();
+    }
+
+    boolean applyRulesToLega(String lega, String statofisico) {
         RuleBookRunner ruleBook = new RuleBookRunner(
             "cart.test",
             s ->
@@ -246,7 +268,7 @@ public class CLSTATFResource {
         );
         NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
 
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, opzione, "B07187", "B07187", "", "");
+        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", "", "");
 
         facts.put(new Fact<>(applicant1));
 

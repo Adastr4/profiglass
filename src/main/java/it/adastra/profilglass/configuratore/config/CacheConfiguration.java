@@ -54,6 +54,7 @@ public class CacheConfiguration {
             createCache(cm, it.adastra.profilglass.configuratore.domain.Parameters.class.getName());
             createCache(cm, it.adastra.profilglass.configuratore.domain.CLLEGA.class.getName());
             createCache(cm, it.adastra.profilglass.configuratore.domain.CLSTATF.class.getName());
+            createCache(cm, it.adastra.profilglass.configuratore.domain.CARCLFINI.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
