@@ -9,8 +9,12 @@
   <select class="custom-select" [ngModel]="selectedDeviceClstatfslega" (ngModelChange)="onChangeClstatfslega($event)" name="sel3">
     <option [ngValue]="i" *ngFor="let i of clstatfslegaData">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
   </select>
+  <br />
+  <br />
   <h4>Seleziona la finitura:</h4>
-  <select class="custom-select">
-    <option></option>
+  <select class="custom-select" [ngModel]="selectedDeviceClstatfsFinitura" (ngModelChange)="onChangeClstatfsFinitura($event)" name="sel3">
+    <option [ngValue]="i" *ngFor="let i of clstatfsFinituraData">{{ i.id }}) {{ i.descrizione }} {{ i.opzione }}</option>
   </select>
+  <br />
+  <br />
 </div>

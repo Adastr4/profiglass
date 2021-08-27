@@ -11,8 +11,10 @@ import { ConstraintService } from 'app/constraint-selection/constraint.service';
 export class ConstraintComponent implements OnInit {
   cllegasData: any = {};
   clstatfslegaData: any = {};
-  selectedDeviceCllegas = '';
-  selectedDeviceClstatfslega = '';
+  clstatfsFinituraData: any = {};
+  selectedDeviceCllegas: any = {};
+  selectedDeviceClstatfslega: any = {};
+  selectedDeviceClstatfsFinitura: any = {};
 
   private readonly destroy$ = new Subject<void>();
 
@@ -21,13 +23,23 @@ export class ConstraintComponent implements OnInit {
   onChangeCllegas(newObj: any): void {
     this.selectedDeviceCllegas = newObj;
 
-    this.constraintService.getClstatfslega(newObj.opzione).subscribe(response => {
+    this.constraintService.getClstatfslega(this.selectedDeviceCllegas.opzione).subscribe(response => {
       this.clstatfslegaData = response.body;
     });
   }
 
   onChangeClstatfslega(newObj: any): void {
     this.selectedDeviceClstatfslega = newObj;
+
+    this.constraintService
+      .getClstatfsFinitura(this.selectedDeviceClstatfslega.opzione, this.selectedDeviceCllegas.opzione)
+      .subscribe(response => {
+        this.clstatfsFinituraData = response.body;
+      });
+  }
+
+  onChangeClstatfsFinitura(newObj: any): void {
+    this.selectedDeviceClstatfsFinitura = newObj;
   }
 
   ngOnInit(): void {

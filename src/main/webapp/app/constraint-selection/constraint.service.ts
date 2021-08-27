@@ -19,4 +19,10 @@ export class ConstraintService {
   getClstatfslega(id: string): Observable<HttpResponse<ICLSTATF>> {
     return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`/api/clstatfslega/${id}`), { observe: 'response' });
   }
+
+  getClstatfsFinitura(idLega: string, idFinitura: string): Observable<HttpResponse<ICLSTATF>> {
+    return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`api/clstatfsfinitura/${idLega} /${idFinitura}`), {
+      observe: 'response',
+    });
+  }
 }
