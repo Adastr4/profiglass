@@ -28,6 +28,11 @@ class CLSTATFResourceTest {
     }
 
     @Test
+    void testApplyRuleToLegaH0f() {
+        assertTrue(CLSTATFR.applyRulesToLega("3A", "H0F"));
+    }
+
+    @Test
     void testApplyRulesToLega() {
         List<CLSTATFDTO> page = new ArrayList<CLSTATFDTO>();
         CLSTATFDTO tmp = new CLSTATFDTO();

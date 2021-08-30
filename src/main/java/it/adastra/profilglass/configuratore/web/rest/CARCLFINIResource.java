@@ -204,7 +204,7 @@ public class CARCLFINIResource {
         RuleBookRunner ruleBook = new RuleBookRunner("cart.test.constraints.cs2");
         NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
 
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "");
+        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "EDT");
 
         facts.put(new Fact<>(applicant1));
 
