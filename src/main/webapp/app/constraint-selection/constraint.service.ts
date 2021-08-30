@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import { ICLLEGA } from 'app/entities/cllega/cllega.model';
 import { ICLSTATF } from 'app/entities/clstatf/clstatf.model';
+import { ICARCLFINI } from 'app/entities/carclfini/carclfini.model';
 
 export type EntityResponseType = HttpResponse<ICLLEGA>;
 
@@ -20,8 +21,8 @@ export class ConstraintService {
     return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`/api/clstatfslega/${id}`), { observe: 'response' });
   }
 
-  getClstatfsFinitura(idLega: string, idFinitura: string): Observable<HttpResponse<ICLSTATF>> {
-    return this.http.get<ICLSTATF>(this.applicationConfigService.getEndpointFor(`api/clstatfsfinitura/${idLega}/${idFinitura}`), {
+  getClstatfsFinitura(idLega: string, idFinitura: string): Observable<HttpResponse<ICARCLFINI>> {
+    return this.http.get<ICARCLFINI>(this.applicationConfigService.getEndpointFor(`api/clstatfsfinitura/${idLega}/${idFinitura}`), {
       observe: 'response',
     });
   }
