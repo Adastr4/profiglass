@@ -238,11 +238,8 @@ public class CLSTATFResource {
 
     boolean applyRulesToLega(String lega, String statofisico) {
         RuleBookRunner ruleBook = new RuleBookRunner(
-            "cart.test",
-            s ->
-                s.equalsIgnoreCase("cart.test") ||
-                s.equalsIgnoreCase("cart.test.library.subrules1") ||
-                s.equalsIgnoreCase("cart.test.library.subrules2")
+            "it.profilglass.constraint.bav.CLLEGA.val",
+            s -> s.equalsIgnoreCase("it.profilglass.constraint.bav.CLLEGA.val")
         );
         NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
 

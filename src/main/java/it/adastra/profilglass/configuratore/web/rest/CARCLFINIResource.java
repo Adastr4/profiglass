@@ -14,6 +14,7 @@ import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertExcep
 import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
@@ -41,9 +42,11 @@ import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
 import test.test.CaratteristicaBean;
+import test.test.Macchina;
 
 /**
- * REST controller for managing {@link it.adastra.profilglass.configuratore.domain.CARCLFINI}.
+ * REST controller for managing
+ * {@link it.adastra.profilglass.configuratore.domain.CARCLFINI}.
  */
 @RestController
 @RequestMapping("/api")
@@ -76,7 +79,9 @@ public class CARCLFINIResource {
      * {@code POST  /carclfinis} : Create a new cARCLFINI.
      *
      * @param cARCLFINIDTO the cARCLFINIDTO to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new cARCLFINIDTO, or with status {@code 400 (Bad Request)} if the cARCLFINI has already an ID.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with
+     *         body the new cARCLFINIDTO, or with status {@code 400 (Bad Request)}
+     *         if the cARCLFINI has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/carclfinis")
@@ -95,11 +100,13 @@ public class CARCLFINIResource {
     /**
      * {@code PUT  /carclfinis/:id} : Updates an existing cARCLFINI.
      *
-     * @param id the id of the cARCLFINIDTO to save.
+     * @param id           the id of the cARCLFINIDTO to save.
      * @param cARCLFINIDTO the cARCLFINIDTO to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated cARCLFINIDTO,
-     * or with status {@code 400 (Bad Request)} if the cARCLFINIDTO is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the cARCLFINIDTO couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated cARCLFINIDTO, or with status {@code 400 (Bad Request)} if
+     *         the cARCLFINIDTO is not valid, or with status
+     *         {@code 500 (Internal Server Error)} if the cARCLFINIDTO couldn't be
+     *         updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/carclfinis/{id}")
@@ -127,14 +134,17 @@ public class CARCLFINIResource {
     }
 
     /**
-     * {@code PATCH  /carclfinis/:id} : Partial updates given fields of an existing cARCLFINI, field will ignore if it is null
+     * {@code PATCH  /carclfinis/:id} : Partial updates given fields of an existing
+     * cARCLFINI, field will ignore if it is null
      *
-     * @param id the id of the cARCLFINIDTO to save.
+     * @param id           the id of the cARCLFINIDTO to save.
      * @param cARCLFINIDTO the cARCLFINIDTO to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated cARCLFINIDTO,
-     * or with status {@code 400 (Bad Request)} if the cARCLFINIDTO is not valid,
-     * or with status {@code 404 (Not Found)} if the cARCLFINIDTO is not found,
-     * or with status {@code 500 (Internal Server Error)} if the cARCLFINIDTO couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated cARCLFINIDTO, or with status {@code 400 (Bad Request)} if
+     *         the cARCLFINIDTO is not valid, or with status {@code 404 (Not Found)}
+     *         if the cARCLFINIDTO is not found, or with status
+     *         {@code 500 (Internal Server Error)} if the cARCLFINIDTO couldn't be
+     *         updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/carclfinis/{id}", consumes = "application/merge-patch+json")
@@ -167,7 +177,8 @@ public class CARCLFINIResource {
      *
      * @param pageable the pagination information.
      * @param criteria the criteria which the requested entities should match.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of cARCLFINIS in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list
+     *         of cARCLFINIS in body.
      */
     @GetMapping("/carclfinis")
     public ResponseEntity<List<CARCLFINIDTO>> getAllCARCLFINIS(CARCLFINICriteria criteria, Pageable pageable) {
@@ -178,8 +189,8 @@ public class CARCLFINIResource {
     }
 
     /**
-     * {@code GET  /clstatfsfinitura/:idlega/:idfinitura} : get the "id" che sono compatibili con la
-     * lega selezionata el a finitura.
+     * {@code GET  /clstatfsfinitura/:idlega/:idfinitura} : get the "id" che sono
+     * compatibili con la lega selezionata el a finitura.
      *
      * prendere tutti i
      *
@@ -188,11 +199,11 @@ public class CARCLFINIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
      *         the cLSTATFDTO, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/clstatfsfinitura/{idlega}/{idfinitura}")
-    public List<CARCLFINIDTO> getAllCLSTATFwFinitura(@PathVariable String idlega, @PathVariable String idfinitura) {
+    @GetMapping("/clstatfsfinitura/{idlega}/{statofisico}")
+    public List<CARCLFINIDTO> getAllCLSTATFwFinitura(@PathVariable String idlega, @PathVariable String statofisico) {
         log.debug("REST request to get getAllCLSTATFwLega by criteria: {}", idlega);
         List<CARCLFINIDTO> page = cARCLFINIQueryService.findByCriteria(null);
-        applyRulesFinitura(idlega, idfinitura, page);
+        applyRulesFinitura(idlega, statofisico, page);
         return page;
     }
 
@@ -206,10 +217,10 @@ public class CARCLFINIResource {
     }
 
     boolean applyRulesToFinitura(String lega, String statofisico, String finitura) {
-        RuleBookRunner ruleBook = new RuleBookRunner("cart.test.constraints.cs2");
+        RuleBookRunner ruleBook = new RuleBookRunner("it.profilglass.constraint.bav.CLFINI.val");
         NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
 
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "EDT");
+        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "F");
 
         facts.put(new Fact<>(applicant1));
 
@@ -228,10 +239,70 @@ public class CARCLFINIResource {
     }
 
     /**
+     * {@code GET  /clstatfsfinitura/:idlega/:statofisico/:idfinitura} : get the
+     * "id" che sono compatibili con la lega selezionata el a finitura.
+     *
+     * prendere tutti i
+     *
+     * @param id the idlega of the lega scelta to retrieve.
+     * @param id the idfinitura of the lega scelta to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the cLSTATFDTO, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/clstatfsfinitura/{idlega}/{statofisico}/{idfinitura}")
+    public List<Macchina> getAllMacchine(@PathVariable String idlega, @PathVariable String statofisico, @PathVariable String idfinitura) {
+        log.debug("REST request to get getAllMacchine by criteria: {}", idlega);
+        List<Macchina> page = new ArrayList<Macchina>();
+        page.add(new Macchina("22", "CUTADASTRA", statofisico, 0, 0));
+
+        RuleBookRunner ruleBook = new RuleBookRunner("it.profilglass.constraint.bav.macchina");
+        CaratteristicaBean caratteristica = new CaratteristicaBean(
+            new BigDecimal(1),
+            "1O",
+            "H22",
+            "B00084",
+            "B00084",
+            "M",
+            "C",
+            "1111",
+            "2222",
+            "C",
+            "N",
+            "N",
+            "",
+            "N",
+            "H22",
+            "1",
+            "005",
+            "2",
+            "P",
+            "0",
+            "0",
+            "+1,00",
+            "-0,00",
+            1,
+            1,
+            "1AA150",
+            "",
+            "BA",
+            "N"
+        );
+        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
+        facts.setValue("caratteristica", caratteristica);
+        ruleBook.setDefaultResult(new ArrayList<Macchina>());
+        ruleBook.run(facts);
+
+        page = (List<Macchina>) ruleBook.getResult().get().getValue();
+
+        return page;
+    }
+
+    /**
      * {@code GET  /carclfinis/count} : count all the cARCLFINIS.
      *
      * @param criteria the criteria which the requested entities should match.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count
+     *         in body.
      */
     @GetMapping("/carclfinis/count")
     public ResponseEntity<Long> countCARCLFINIS(CARCLFINICriteria criteria) {
@@ -243,7 +314,8 @@ public class CARCLFINIResource {
      * {@code GET  /carclfinis/:id} : get the "id" cARCLFINI.
      *
      * @param id the id of the cARCLFINIDTO to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the cARCLFINIDTO, or with status {@code 404 (Not Found)}.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the cARCLFINIDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/carclfinis/{id}")
     public ResponseEntity<CARCLFINIDTO> getCARCLFINI(@PathVariable Long id) {
