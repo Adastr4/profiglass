@@ -85,6 +85,7 @@
     "bootstrap": "4.6.0",
     "bootswatch": "4.6.0",
     "dayjs": "1.10.5",
+    "generator-jhipster-db-helper": "^1.2.0",
     "ngx-infinite-scroll": "10.0.1",
     "ngx-treeview": "^10.0.2",
     "ngx-webstorage": "8.0.0",

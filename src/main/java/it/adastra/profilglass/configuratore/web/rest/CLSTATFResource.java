@@ -1,12 +1,10 @@
 package it.adastra.profilglass.configuratore.web.rest;
 
-import cart.test.CaratteristicaBean;
 import com.deliveredtechnologies.rulebook.Fact;
 import com.deliveredtechnologies.rulebook.FactMap;
 import com.deliveredtechnologies.rulebook.NameValueReferableMap;
 import com.deliveredtechnologies.rulebook.Result;
 import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
-import it.adastra.profilglass.configuratore.domain.CARCLFINI;
 import it.adastra.profilglass.configuratore.repository.CLSTATFRepository;
 import it.adastra.profilglass.configuratore.service.CLSTATFQueryService;
 import it.adastra.profilglass.configuratore.service.CLSTATFService;
@@ -42,6 +40,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import test.test.CaratteristicaBean;
 
 /**
  * REST controller for managing

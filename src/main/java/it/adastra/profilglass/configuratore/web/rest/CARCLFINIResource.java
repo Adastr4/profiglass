@@ -1,18 +1,15 @@
 package it.adastra.profilglass.configuratore.web.rest;
 
-import cart.test.CaratteristicaBean;
 import com.deliveredtechnologies.rulebook.Fact;
 import com.deliveredtechnologies.rulebook.FactMap;
 import com.deliveredtechnologies.rulebook.NameValueReferableMap;
 import com.deliveredtechnologies.rulebook.Result;
 import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
-import it.adastra.profilglass.configuratore.domain.CARCLFINI;
 import it.adastra.profilglass.configuratore.repository.CARCLFINIRepository;
 import it.adastra.profilglass.configuratore.service.CARCLFINIQueryService;
 import it.adastra.profilglass.configuratore.service.CARCLFINIService;
 import it.adastra.profilglass.configuratore.service.criteria.CARCLFINICriteria;
 import it.adastra.profilglass.configuratore.service.dto.CARCLFINIDTO;
-import it.adastra.profilglass.configuratore.service.dto.CLSTATFDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
 import java.math.BigDecimal;
 import java.net.URI;
@@ -29,13 +26,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import test.test.CaratteristicaBean;
 
 /**
  * REST controller for managing {@link it.adastra.profilglass.configuratore.domain.CARCLFINI}.
