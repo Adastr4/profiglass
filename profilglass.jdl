@@ -1,0 +1,64 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName profilglass
+    blueprints []
+    buildTool maven
+    cacheProvider ehcache
+    clientFramework angularX
+    clientPackageManager npm
+    clientTheme cerulean
+    clientThemeVariant primary
+    creationTimestamp 1629820886431
+    databaseType sql
+    devDatabaseType mysql
+    dtoSuffix DTO
+    enableHibernateCache true
+    enableSwaggerCodegen true
+    enableTranslation true
+    jhiPrefix jhi
+    jhipsterVersion "7.1.0"
+    jwtSecretKey "OTlkY2U3NWNkMmYyZjllN2IzMWQwNTBhNjVmYzBlNzZmZGUwY2MyNTNjMjZkNWYyOTkzZjE4NzhiYzVmODk3MGI5YTEzNDZhODQ0NjQwYzFkNDA3NDhjNDNjOGZhYzg4ZDljODBjOGY2YjA1ZDM3M2U0OGMzNjUxNjBlYmRmZjU="
+    languages [it, en]
+    messageBroker false
+    nativeLanguage it
+    otherModules []
+    packageName it.adastra.profilglass.configuratore
+    prodDatabaseType mysql
+    reactive false
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType eureka
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks [cucumber]
+    websocket spring-websocket
+    withAdminUi true
+  }
+
+  entities CARCLFINI, CLLEGA, CLSTATF, Parameters
+}
+
+entity CARCLFINI {
+  classe String required
+}
+entity CLLEGA {
+  opzione String required
+  descrizione String
+}
+entity CLSTATF {
+  opzione String required
+  descrizione String
+}
+entity Parameters {
+  key String required
+  value String required
+  description String
+}
+dto CARCLFINI, CLLEGA, CLSTATF, Parameters with mapstruct
+paginate CARCLFINI, CLLEGA, CLSTATF with pagination
+paginate Parameters with infinite-scroll
+service CARCLFINI, CLLEGA, CLSTATF, Parameters with serviceImpl
+filter CARCLFINI, CLLEGA, CLSTATF, Parameters

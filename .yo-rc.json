@@ -44,6 +44,7 @@
     "clientPackageManager": "npm",
     "languages": ["it", "en"],
     "lastLiquibaseTimestamp": 1630056626000,
-    "entities": ["Parameters", "CLLEGA", "CLSTATF", "CARCLFINI"]
+    "entities": ["Parameters", "CLLEGA", "CLSTATF", "CARCLFINI"],
+    "packages": ["bin"]
   }
 }
