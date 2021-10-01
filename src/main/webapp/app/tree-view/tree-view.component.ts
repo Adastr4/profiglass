@@ -12,7 +12,7 @@ export class TreeViewComponent implements OnInit {
   items: TreeviewItem[] = [];
   values: number[] = [];
   config = TreeviewConfig.create({
-    hasAllCheckBox: true,
+    hasAllCheckBox: false,
     hasFilter: true,
     hasCollapseExpand: true,
     decoupleChildFromParent: false,
