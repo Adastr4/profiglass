@@ -1,6 +1,28 @@
+import { Injectable } from '@angular/core';
 import { TreeviewItem } from 'ngx-treeview';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
+import { ApplicationConfigService } from 'app/core/config/application-config.service';
+
+export type EntityResponseType = HttpResponse<JSON>;
+
+@Injectable({ providedIn: 'root' })
 export class TreeViewService {
+  constructor(private http: HttpClient, private applicationConfigService: ApplicationConfigService) {}
+
+  getConfiguration(idLega: string, idStato: string, idFinitura: string): Observable<EntityResponseType> {
+    return this.http.get<JSON>(this.applicationConfigService.getEndpointFor(`api/configuratore/${idLega}/${idStato}/${idFinitura}`), {
+      observe: 'response',
+    });
+  }
+
+  getClstatfsFinitura(idLega: string, idStato: string, idFinitura: string): Observable<EntityResponseType> {
+    return this.http.get<JSON>(this.applicationConfigService.getEndpointFor(`api/clstatfsfinitura/${idLega}/${idStato}/${idFinitura}`), {
+      observe: 'response',
+    });
+  }
+
   getBooks(): TreeviewItem[] {
     const itCategory = new TreeviewItem({
       text: 'Configuratore',
