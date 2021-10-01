@@ -1,13 +1,21 @@
 package it.adastra.profilglass.configuratore.web.rest;
 
+import com.deliveredtechnologies.rulebook.FactMap;
+import com.deliveredtechnologies.rulebook.NameValueReferableMap;
+import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
 import it.adastra.profilglass.configuratore.repository.ParametersRepository;
 import it.adastra.profilglass.configuratore.service.ParametersQueryService;
 import it.adastra.profilglass.configuratore.service.ParametersService;
 import it.adastra.profilglass.configuratore.service.criteria.ParametersCriteria;
+import it.adastra.profilglass.configuratore.service.dto.CARCLFINIDTO;
 import it.adastra.profilglass.configuratore.service.dto.ParametersDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
+import it.profilglass.classmodel.Configuratore;
+import it.profilglass.classmodel.ConfiguratoreBAV;
+import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -33,6 +41,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import test.test.CaratteristicaBean;
+import test.test.Macchina;
 
 /**
  * REST controller for managing {@link it.adastra.profilglass.configuratore.domain.Parameters}.
@@ -208,5 +218,23 @@ public class ParametersResource {
             .noContent()
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
+    }
+
+    /**
+     * {@code GET  /configuratore/{idlega}/{statofisico}/{idfinitura} :
+     *  restituisce il configuratore con i cicli e le distinte
+     *
+     *
+     * @param id the idlega of the lega scelta to retrieve.
+     * @param id the statofisico of the lega scelta to retrieve.
+     * @param id the idfinitura of the lega scelta to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the configuratore, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/configuratore/{idlega}/{statofisico}/{idfinitura}")
+    public Configuratore getConfiguratore(@PathVariable String idlega, @PathVariable String statofisico, @PathVariable String idfinitura) {
+        log.debug("REST request to get configuratore by criteria: {}", idlega);
+
+        return new ConfiguratoreBAV();
     }
 }
