@@ -1,21 +1,15 @@
 package it.adastra.profilglass.configuratore.web.rest;
 
-import com.deliveredtechnologies.rulebook.FactMap;
-import com.deliveredtechnologies.rulebook.NameValueReferableMap;
-import com.deliveredtechnologies.rulebook.model.runner.RuleBookRunner;
 import it.adastra.profilglass.configuratore.repository.ParametersRepository;
 import it.adastra.profilglass.configuratore.service.ParametersQueryService;
 import it.adastra.profilglass.configuratore.service.ParametersService;
 import it.adastra.profilglass.configuratore.service.criteria.ParametersCriteria;
-import it.adastra.profilglass.configuratore.service.dto.CARCLFINIDTO;
 import it.adastra.profilglass.configuratore.service.dto.ParametersDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
 import it.profilglass.classmodel.Configuratore;
 import it.profilglass.classmodel.ConfiguratoreBAV;
-import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -41,8 +35,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
-import test.test.CaratteristicaBean;
-import test.test.Macchina;
 
 /**
  * REST controller for managing {@link it.adastra.profilglass.configuratore.domain.Parameters}.

@@ -11,6 +11,8 @@ import it.adastra.profilglass.configuratore.service.CARCLFINIService;
 import it.adastra.profilglass.configuratore.service.criteria.CARCLFINICriteria;
 import it.adastra.profilglass.configuratore.service.dto.CARCLFINIDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
+import it.profilglass.classmodel.Caratteristica;
+import it.profilglass.classmodel.ICaratteristica;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -41,7 +43,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
-import test.test.CaratteristicaBean;
 import test.test.Macchina;
 
 /**
@@ -218,9 +219,9 @@ public class CARCLFINIResource {
 
     boolean applyRulesToFinitura(String lega, String statofisico, String finitura) {
         RuleBookRunner ruleBook = new RuleBookRunner("it.profilglass.constraint.bav.CLFINI.val");
-        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
+        NameValueReferableMap<ICaratteristica> facts = new FactMap<>();
 
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "F");
+        ICaratteristica applicant1 = new Caratteristica(new BigDecimal(650), lega, statofisico, "B07187", "B07187", finitura, "F");
 
         facts.put(new Fact<>(applicant1));
 
@@ -256,7 +257,7 @@ public class CARCLFINIResource {
         page.add(new Macchina("22", "CUTADASTRA", statofisico, 0, 0));
 
         RuleBookRunner ruleBook = new RuleBookRunner("it.profilglass.constraint.bav.macchina");
-        CaratteristicaBean caratteristica = new CaratteristicaBean(
+        ICaratteristica caratteristica = new Caratteristica(
             new BigDecimal(1),
             "1O",
             "H22",
@@ -287,7 +288,7 @@ public class CARCLFINIResource {
             "BA",
             "N"
         );
-        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
+        NameValueReferableMap<ICaratteristica> facts = new FactMap<>();
         facts.setValue("caratteristica", caratteristica);
         ruleBook.setDefaultResult(new ArrayList<Macchina>());
         ruleBook.run(facts);

@@ -11,6 +11,8 @@ import it.adastra.profilglass.configuratore.service.CLSTATFService;
 import it.adastra.profilglass.configuratore.service.criteria.CLSTATFCriteria;
 import it.adastra.profilglass.configuratore.service.dto.CLSTATFDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
+import it.profilglass.classmodel.Caratteristica;
+import it.profilglass.classmodel.ICaratteristica;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -40,7 +42,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
-import test.test.CaratteristicaBean;
 
 /**
  * REST controller for managing
@@ -241,9 +242,9 @@ public class CLSTATFResource {
             "it.profilglass.constraint.bav.CLLEGA.val",
             s -> s.equalsIgnoreCase("it.profilglass.constraint.bav.CLLEGA.val")
         );
-        NameValueReferableMap<CaratteristicaBean> facts = new FactMap<>();
+        NameValueReferableMap<ICaratteristica> facts = new FactMap<>();
 
-        CaratteristicaBean applicant1 = new CaratteristicaBean(new BigDecimal(650), lega, statofisico, "B07187", "B07187", "", "");
+        ICaratteristica applicant1 = new Caratteristica(new BigDecimal(650), lega, statofisico, "B07187", "B07187", "", "");
 
         facts.put(new Fact<>(applicant1));
 
