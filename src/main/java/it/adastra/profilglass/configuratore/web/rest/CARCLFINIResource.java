@@ -13,6 +13,7 @@ import it.adastra.profilglass.configuratore.service.dto.CARCLFINIDTO;
 import it.adastra.profilglass.configuratore.web.rest.errors.BadRequestAlertException;
 import it.profilglass.classmodel.Caratteristica;
 import it.profilglass.classmodel.ICaratteristica;
+import it.profilglass.classmodel.Macchina;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,7 +44,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
-import test.test.Macchina;
 
 /**
  * REST controller for managing
