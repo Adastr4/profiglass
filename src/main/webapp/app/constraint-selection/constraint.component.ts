@@ -35,7 +35,7 @@ export class ConstraintComponent implements OnInit {
     this.transferDataService.setStato(this.selectedDeviceClstatfslega.opzione);
 
     this.constraintService
-      .getClstatfsFinitura(this.selectedDeviceClstatfslega.opzione, this.selectedDeviceCllegas.opzione)
+      .getClstatfsFinitura(this.selectedDeviceCllegas.opzione, this.selectedDeviceClstatfslega.opzione)
       .subscribe(response => {
         this.clstatfsFinituraData = response.body;
       });
