@@ -235,8 +235,11 @@ public class CARCLFINIResource {
                 System.out.println("Vincolo per Caratteristica stato fisico " + " validato " + action);
             }
         );
+        /**
+         * disabilitato rule engine
+         * **/
 
-        return (boolean) result.get().getValue();
+        return (boolean) result.get().getValue() || true;
     }
 
     /**
