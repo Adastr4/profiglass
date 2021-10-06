@@ -22,7 +22,6 @@ export class TreeViewComponent implements OnInit {
   data: any = undefined;
   testView: any;
   testConfig: any;
-
   buttonClasses = [
     'btn-outline-primary',
     'btn-outline-secondary',
@@ -51,7 +50,62 @@ export class TreeViewComponent implements OnInit {
       });
       /* eslint-enable no-console */
     });
-    this.items = this.service.getBooks();
+    /**
+     * TEST
+     */
+    this.service.getConfiguration('3D', 'H14', 'I').subscribe(response => {
+      /* eslint-disable no-console */
+      //console.log('Response:', response.body);
+      this.testConfig = response.body;
+      const caratteristica: any = [];
+      this.testConfig.caratteristiche.forEach((car: any) => {
+        //console.log("classe: ", car.caratteristicaId);
+        const valCaratteristica: any = [];
+        car.valori.forEach((val: any) => {
+          const childVal = {
+            text: `${String(val.opzione)} ${String(val.descrizione)}`,
+            value: car.caratteristicaOrder * 10,
+            checked: false,
+          };
+          valCaratteristica.push(childVal);
+        });
+        const childCaratteristica = {
+          text: `${String(car.caratteristicaId)} ${String(car.classe)}`,
+          value: car.caratteristicaOrder,
+          children: valCaratteristica,
+          checked: false,
+        };
+        caratteristica.push(childCaratteristica);
+      });
+      this.items = [
+        new TreeviewItem({
+          text: 'Configuratore',
+          value: 9,
+          children: [
+            {
+              text: 'Caratteristica',
+              value: 911,
+              children: caratteristica,
+            },
+            {
+              text: 'Ciclo',
+              value: 911,
+              children: [],
+            },
+            {
+              text: 'Distinta',
+              value: 912,
+              children: [],
+            },
+          ],
+        }),
+      ];
+      /* eslint-disable no-console */
+    });
+    /**
+     * FINE TEST
+     */
+    //this.items = this.service.getBooks();
   }
 
   onFilterChange(value: string): void {
