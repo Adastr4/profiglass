@@ -63,14 +63,14 @@ export class TreeViewComponent implements OnInit {
         const valCaratteristica: any = [];
         car.valori.forEach((val: any) => {
           const childVal = {
-            text: `${String(val.opzione)} ${String(val.descrizione)}`,
+            text: `Opzione: ${String(val.opzione)} | Descrizione: ${String(val.descrizione)}`,
             value: car.caratteristicaOrder * 10,
             checked: false,
           };
           valCaratteristica.push(childVal);
         });
         const childCaratteristica = {
-          text: `${String(car.caratteristicaId)} ${String(car.classe)}`,
+          text: `ID: ${String(car.caratteristicaId)} | Classe: ${String(car.classe)}`,
           value: car.caratteristicaOrder,
           children: valCaratteristica,
           checked: false,
