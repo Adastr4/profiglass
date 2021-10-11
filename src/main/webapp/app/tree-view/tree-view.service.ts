@@ -23,7 +23,37 @@ export class TreeViewService {
     });
   }
 
-  getConfigTreeView(testConfig: any): TreeviewItem[] {
+  getBaseTreeView(): TreeviewItem[] {
+    return [
+      new TreeviewItem({
+        text: 'Configuratore',
+        value: 9,
+        children: [
+          {
+            text: 'Caratteristica',
+            value: 911,
+            children: [],
+            checked: false,
+          },
+          {
+            text: 'Ciclo',
+            value: 911,
+            children: [],
+            checked: false,
+          },
+          {
+            text: 'Distinta',
+            value: 912,
+            children: [],
+            checked: false,
+          },
+        ],
+        checked: false,
+      }),
+    ];
+  }
+
+  getConfigTreeView(testConfig: any): any {
     const caratteristica: any = [];
     if (testConfig.caratteristiche !== undefined) {
       testConfig.caratteristiche.forEach((car: any) => {
@@ -46,32 +76,6 @@ export class TreeViewService {
       });
     }
 
-    return [
-      new TreeviewItem({
-        text: 'Configuratore',
-        value: 9,
-        children: [
-          {
-            text: 'Caratteristica',
-            value: 911,
-            children: caratteristica,
-            checked: false,
-          },
-          {
-            text: 'Ciclo',
-            value: 911,
-            children: [],
-            checked: false,
-          },
-          {
-            text: 'Distinta',
-            value: 912,
-            children: [],
-            checked: false,
-          },
-        ],
-        checked: false,
-      }),
-    ];
+    return caratteristica;
   }
 }

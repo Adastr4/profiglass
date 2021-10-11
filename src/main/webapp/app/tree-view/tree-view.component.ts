@@ -25,12 +25,12 @@ export class TreeViewComponent implements OnInit {
 
   /* eslint-disable no-console */
   ngOnInit(): void {
-    this.items = this.service.getConfigTreeView({});
+    this.items = this.service.getBaseTreeView();
 
     this.transferDataService.subject.subscribe(data => {
       this.data = data;
       this.service.getConfiguration(this.data.lega, this.data.stato, this.data.finitura).subscribe(response => {
-        this.items = this.service.getConfigTreeView(response.body);
+        this.items[0].children[0].children = this.service.getConfigTreeView(response.body);
       });
     });
   }
