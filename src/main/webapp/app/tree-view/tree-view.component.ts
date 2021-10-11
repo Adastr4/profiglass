@@ -23,25 +23,16 @@ export class TreeViewComponent implements OnInit {
 
   constructor(private service: TreeViewService, private transferDataService: TransferDataService) {}
 
+  /* eslint-disable no-console */
   ngOnInit(): void {
+    this.items = this.service.getConfigTreeView({});
+
     this.transferDataService.subject.subscribe(data => {
       this.data = data;
-      /* eslint-disable no-console */
-      //console.log(this.data.lega, this.data.stato, this.data.finitura);
       this.service.getConfiguration(this.data.lega, this.data.stato, this.data.finitura).subscribe(response => {
-        //console.log('Response:', response.body);
         this.items = this.service.getConfigTreeView(response.body);
       });
     });
-    /**
-     * TEST
-     *
-    this.service.getConfiguration('3D', 'H14', 'I').subscribe(response => {
-      this.items = this.service.getConfigTreeView(response.body);
-    });
-    /**
-     * FINE TEST
-     */
   }
 
   onFilterChange(value: string): void {

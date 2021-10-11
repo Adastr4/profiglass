@@ -25,25 +25,26 @@ export class TreeViewService {
 
   getConfigTreeView(testConfig: any): TreeviewItem[] {
     const caratteristica: any = [];
-
-    testConfig.caratteristiche.forEach((car: any) => {
-      const valCaratteristica: any = [];
-      car.valori.forEach((val: any) => {
-        const childVal = {
-          text: `Opzione: ${String(val.opzione)} | Descrizione: ${String(val.descrizione)}`,
-          value: car.caratteristicaOrder * 10,
+    if (testConfig.caratteristiche !== undefined) {
+      testConfig.caratteristiche.forEach((car: any) => {
+        const valCaratteristica: any = [];
+        car.valori.forEach((val: any) => {
+          const childVal = {
+            text: `Opzione: ${String(val.opzione)} | Descrizione: ${String(val.descrizione)}`,
+            value: car.caratteristicaOrder * 10,
+            checked: false,
+          };
+          valCaratteristica.push(childVal);
+        });
+        const childCaratteristica = {
+          text: `ID: ${String(car.caratteristicaId)} | Classe: ${String(car.classe)}`,
+          value: car.caratteristicaOrder,
+          children: valCaratteristica,
           checked: false,
         };
-        valCaratteristica.push(childVal);
+        caratteristica.push(childCaratteristica);
       });
-      const childCaratteristica = {
-        text: `ID: ${String(car.caratteristicaId)} | Classe: ${String(car.classe)}`,
-        value: car.caratteristicaOrder,
-        children: valCaratteristica,
-        checked: false,
-      };
-      caratteristica.push(childCaratteristica);
-    });
+    }
 
     return [
       new TreeviewItem({
@@ -54,18 +55,22 @@ export class TreeViewService {
             text: 'Caratteristica',
             value: 911,
             children: caratteristica,
+            checked: false,
           },
           {
             text: 'Ciclo',
             value: 911,
             children: [],
+            checked: false,
           },
           {
             text: 'Distinta',
             value: 912,
             children: [],
+            checked: false,
           },
         ],
+        checked: false,
       }),
     ];
   }
