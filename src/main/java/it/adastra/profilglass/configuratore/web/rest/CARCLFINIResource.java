@@ -239,7 +239,7 @@ public class CARCLFINIResource {
          * disabilitato rule engine
          * **/
 
-        return (boolean) result.get().getValue() || true;
+        return (boolean) result.get().getValue(); //|| true;
     }
 
     /**
